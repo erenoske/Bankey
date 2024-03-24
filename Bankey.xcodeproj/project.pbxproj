@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B01976682BB04B2F00C4B2FD /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01976672BB04B2F00C4B2FD /* OnboardingContainerViewController.swift */; };
 		B019766C2BB052EB00C4B2FD /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B019766B2BB052EB00C4B2FD /* OnboardingViewController.swift */; };
+		B019766E2BB0BA2700C4B2FD /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B019766D2BB0BA2700C4B2FD /* DummyViewController.swift */; };
+		B01976712BB0C5C900C4B2FD /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01976702BB0C5C900C4B2FD /* LocalState.swift */; };
 		B0B292282BAB6D0300D39902 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B292272BAB6D0300D39902 /* AppDelegate.swift */; };
 		B0B2922A2BAB6D0300D39902 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B292292BAB6D0300D39902 /* SceneDelegate.swift */; };
 		B0B2922C2BAB6D0300D39902 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B2922B2BAB6D0300D39902 /* LoginViewController.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		B01976672BB04B2F00C4B2FD /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		B019766B2BB052EB00C4B2FD /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		B019766D2BB0BA2700C4B2FD /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
+		B01976702BB0C5C900C4B2FD /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
 		B0B292242BAB6D0300D39902 /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B292272BAB6D0300D39902 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B292292BAB6D0300D39902 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B019766F2BB0C5B800C4B2FD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B01976702BB0C5C900C4B2FD /* LocalState.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		B0B2921B2BAB6D0300D39902 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +72,7 @@
 		B0B292262BAB6D0300D39902 /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
+				B019766F2BB0C5B800C4B2FD /* Utils */,
 				B0B292482BAB703F00D39902 /* Views */,
 				B0B292452BAB6F4000D39902 /* Controllers */,
 				B0B292432BAB6F2600D39902 /* Delegates */,
@@ -93,6 +106,7 @@
 				B0B2922B2BAB6D0300D39902 /* LoginViewController.swift */,
 				B01976672BB04B2F00C4B2FD /* OnboardingContainerViewController.swift */,
 				B019766B2BB052EB00C4B2FD /* OnboardingViewController.swift */,
+				B019766D2BB0BA2700C4B2FD /* DummyViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -175,12 +189,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B019766E2BB0BA2700C4B2FD /* DummyViewController.swift in Sources */,
 				B0B2922C2BAB6D0300D39902 /* LoginViewController.swift in Sources */,
 				B019766C2BB052EB00C4B2FD /* OnboardingViewController.swift in Sources */,
 				B0B292282BAB6D0300D39902 /* AppDelegate.swift in Sources */,
 				B0B292472BAB702A00D39902 /* LoginView.swift in Sources */,
 				B01976682BB04B2F00C4B2FD /* OnboardingContainerViewController.swift in Sources */,
 				B0B2922A2BAB6D0300D39902 /* SceneDelegate.swift in Sources */,
+				B01976712BB0C5C900C4B2FD /* LocalState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

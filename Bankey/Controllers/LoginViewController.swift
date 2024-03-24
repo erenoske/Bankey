@@ -7,9 +7,19 @@
 
 import UIKit
 
+protocol LoginViewControllerDelegate: AnyObject {
+    func didLogin()
+}
+
+protocol LogoutDelegate: AnyObject {
+    func didLogout()
+}
+
 class LoginViewController:  UIViewController {
     
     let loginView = LoginView()
+    
+    weak var delegate: LoginViewControllerDelegate?
     
     var username: String? {
         return loginView.usernameTextField.text
@@ -57,6 +67,11 @@ class LoginViewController:  UIViewController {
         loginView.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemBackground
         layout()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        signInButton.configuration?.showsActivityIndicator = false
     }
 
 }
@@ -129,6 +144,7 @@ extension LoginViewController {
         
         if username == "Eren" && password == "welcome" {
             signInButton.configuration?.showsActivityIndicator = true
+            delegate?.didLogin()
         } else {
             configureView(with: "Incorrect username / password")
         }
