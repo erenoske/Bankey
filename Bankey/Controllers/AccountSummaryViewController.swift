@@ -10,13 +10,7 @@ import UIKit
 class AccountSummaryViewController: UIViewController {
     
     private var headerView: AccountSummaryHeaderView?
-    
-    let games = [
-        "Pacman",
-        "Space Invaders",
-        "Space Patrol",
-    ]
-    
+    var accounts: [AccountSummaryTableViewCell.ViewModel] = []
     var tableView = UITableView()
     
     override func viewDidLoad() {
@@ -30,6 +24,7 @@ class AccountSummaryViewController: UIViewController {
 extension AccountSummaryViewController {
     private func setup() {
         setupTableView()
+        fetchData()
     }
     
     private func setupTableView() {
@@ -66,16 +61,35 @@ extension AccountSummaryViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        cell.selectionStyle = .none
+        let account = accounts[indexPath.row]
+        cell.configure(with: account)
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        return accounts.count
     }
 }
 
 extension AccountSummaryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+}
+
+extension AccountSummaryViewController {
+    private func fetchData() {
+        let savings = AccountSummaryTableViewCell.ViewModel(accountType: .Banking,
+                                                    accountName: "Basic Savings")
+        let visa = AccountSummaryTableViewCell.ViewModel(accountType: .CreditCard,
+                                                       accountName: "Visa Avion Card")
+        let investment = AccountSummaryTableViewCell.ViewModel(accountType: .Investment,
+                                                       accountName: "Tax-Free Saver")
+
+        accounts.append(savings)
+        accounts.append(visa)
+        accounts.append(investment)
     }
 }
