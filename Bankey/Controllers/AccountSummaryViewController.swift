@@ -9,6 +9,8 @@ import UIKit
 
 class AccountSummaryViewController: UIViewController {
     
+    private var headerView: AccountSummaryHeaderView?
+    
     let games = [
         "Pacman",
         "Space Invaders",
@@ -19,7 +21,9 @@ class AccountSummaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setup()
+        setupHeaderView()
     }
 }
 
@@ -32,6 +36,10 @@ extension AccountSummaryViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+        tableView.register(AccountSummaryTableViewCell.self, forCellReuseIdentifier: AccountSummaryTableViewCell.identifier)
+        tableView.rowHeight = AccountSummaryTableViewCell.rowHeight
+        tableView.tableFooterView = UIView()
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
@@ -42,12 +50,22 @@ extension AccountSummaryViewController {
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+    
+    private func setupHeaderView() {
+        
+        headerView = AccountSummaryHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 170))
+        tableView.tableHeaderView = headerView
+
+    }
 }
 
 extension AccountSummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = games[indexPath.row]
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AccountSummaryTableViewCell.identifier, for: indexPath) as? AccountSummaryTableViewCell else {
+            return UITableViewCell()
+        }
+        
         return cell
     }
     
