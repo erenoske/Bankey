@@ -28,12 +28,14 @@ extension AccountSummaryViewController {
     }
     
     private func setupTableView() {
+        tableView.backgroundColor = appColor
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.register(AccountSummaryTableViewCell.self, forCellReuseIdentifier: AccountSummaryTableViewCell.identifier)
         tableView.rowHeight = AccountSummaryTableViewCell.rowHeight
         tableView.tableFooterView = UIView()
+        tableView.showsVerticalScrollIndicator = false
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
