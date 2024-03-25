@@ -27,10 +27,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         onboardingContainerViewController.delegate = self
         dummyViewController.logoutDelegate = self
         
-        window?.rootViewController = mainViewController
+        window?.rootViewController = AccountSummaryViewController()
         
         // Selected tab bar
-        mainViewController.selectedIndex = 1
+        mainViewController.selectedIndex = 0
         
         window?.makeKeyAndVisible()
     }
