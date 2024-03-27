@@ -7,7 +7,7 @@
 
 import UIKit
 
-let appColor: UIColor = .systemTeal
+let appColor: UIColor = .systemBackground
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -47,7 +47,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func prepMainView() {
-        mainViewController.setStatusBar()
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().backgroundColor = appColor
     }

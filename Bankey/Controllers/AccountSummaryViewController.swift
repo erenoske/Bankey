@@ -18,6 +18,13 @@ class AccountSummaryViewController: UIViewController {
         
         setup()
         setupHeaderView()
+        
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithTransparentBackground() // to hide Navigation Bar Line also
+        navBarAppearance.backgroundColor = appColor
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+
     }
 }
 
@@ -28,23 +35,24 @@ extension AccountSummaryViewController {
     }
     
     private func setupTableView() {
-        tableView.backgroundColor = appColor
+        
+        tableView.backgroundColor = .systemTeal
+        
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.register(AccountSummaryTableViewCell.self, forCellReuseIdentifier: AccountSummaryTableViewCell.identifier)
         tableView.rowHeight = AccountSummaryTableViewCell.rowHeight
-        tableView.tableFooterView = UIView()
         tableView.showsVerticalScrollIndicator = false
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     

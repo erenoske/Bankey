@@ -68,7 +68,7 @@ class AccountSummaryHeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = appColor
+        backgroundColor = .systemTeal
         
         stackView.addArrangedSubview(titleLabel)
         stackView.addArrangedSubview(titleSecondLabel)

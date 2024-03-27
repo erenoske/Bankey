@@ -31,7 +31,6 @@ class AccountSummaryTableViewCell: UITableViewCell {
        
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = appColor
         return view
     }()
     
@@ -86,7 +85,7 @@ class AccountSummaryTableViewCell: UITableViewCell {
        
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        let chevronImage = UIImage(systemName: "chevron.right")?.withTintColor(appColor, renderingMode: .alwaysOriginal)
+        let chevronImage = UIImage(systemName: "chevron.right")?.withTintColor(.systemTeal, renderingMode: .alwaysOriginal)
         imageView.image = chevronImage
         return imageView
     }()
@@ -165,7 +164,7 @@ extension AccountSummaryTableViewCell {
         
         switch viewModel.accountType {
         case .Banking:
-            underlineView.backgroundColor = appColor
+            underlineView.backgroundColor = .systemTeal
             balanceLabel.text = "Current balance"
             break
         case .CreditCard:

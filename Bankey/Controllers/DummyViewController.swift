@@ -20,6 +20,7 @@ class DummyViewController: UIViewController {
         super.viewDidLoad()
         style()
         layout()
+        
     }
 }
 
